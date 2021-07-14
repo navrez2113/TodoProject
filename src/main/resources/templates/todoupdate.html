@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Management System</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+</head>
+<body>
+	<div class="container">
+		<hr>
+		<h2>Update Todo</h2>
+
+		<form action="#" th:action="@{/todo/save}" th:object="${todos}"
+			method="POST">
+
+
+			<input type="text" id="description" th:field="${todos.description}"
+				placeholder="Description" class="form-control mb-4 col-20">
+			<input type="date" id="targetDate" th:field="${todos.targetDate}"
+				patern="dd.MM.yyyy" class="form-control mb-4 col-20">
+
+
+
+			<button type="submit" class="btn btn-info col-2">Update Todo</button>
+		</form>
+
+		<hr>
+
+		<a th:href="@{/todo}"> Back to Todo List</a>
+	</div>
+</body>
+</html>
